@@ -1,9 +1,9 @@
 from django.shortcuts import render
-
+from .models import Post
 
 # Create your views here.
 
 def posts_list(request):
-    n= ['alish', 'dsdsd', 'scsscc', 'scscscsc/']
+    posts = Post.objects.all()
 
-    return render (request, 'blog/index.html', context={'name': n})
+    return render (request, 'blog/index.html', context={'posts': posts})
