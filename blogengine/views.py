@@ -1,3 +1,5 @@
 from django.http import HttpResponse
-def hello (request):
-    return HttpResponse('<h2>Hello World<h2>')
+from django.shortcuts import redirect
+
+def redirect_blog(request):
+    return redirect('posts_list_url', permanent=True)
